@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.CMU_2526_8230258_8230204_8230153" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>

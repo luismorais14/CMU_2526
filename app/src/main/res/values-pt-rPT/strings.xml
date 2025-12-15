@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Food Logger</string>
+
+    <string name="title_diary">Diário</string>
+    <string name="title_plans">Planos</string>
+    <string name="title_map">Mapa</string>
+    <string name="title_leaderboard">Leaderboard</string>
+    <string name="title_profile">Perfil</string>
+    <string name="title_search_for">Adicionar ao %1$s</string> <string name="profile_weight_tracker">Rastreador de Peso</string>
+    <string name="profile_energy_balance">Saldo de Energia</string>
+    <string name="profile_settings">Definições</string>
+    <string name="profile_personal_info">Informações Pessoais</string>
+    <string name="profile_edit">Editar Perfil</string>
+    <string name="profile_logout">Terminar Sessão</string>
+    <string name="title_plan_details">Detalhes do Plano</string>
+</resources>

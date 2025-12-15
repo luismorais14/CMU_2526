@@ -1,0 +1,43 @@
+image: mobiledevops/android-sdk-image:34.0.0-jdk17
+
+default:
+  tags:
+    - cmu
+
+stages:
+  - test
+  - build
+
+variables:
+  GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+  GRADLE_USER_HOME: "$CI_PROJECT_DIR/.gradle"
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - .gradle/
+    - app/build/
+
+before_script:
+  - echo "MAPS_API_KEY=${MAPS_API_KEY}" > local.properties
+  - echo "SPOONACULAR_API_KEY=${SPOONACULAR_API_KEY}" >> local.properties
+
+lint_check:
+  stage: test
+  script:
+    - bash gradlew lintDebug
+  allow_failure: true
+
+unit_tests:
+  stage: test
+  script:
+    - bash gradlew testDebugUnitTest
+
+build_debug_apk:
+  stage: build
+  script:
+    - bash gradlew assembleDebug
+  artifacts:
+    paths:
+      - app/build/outputs/apk/debug/app-debug.apk
+    expire_in: 1 week
